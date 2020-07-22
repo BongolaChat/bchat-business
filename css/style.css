@@ -230,7 +230,7 @@ h6 {
   border: 2px solid #fff;
 }
 
-#intro .intro-info .btn-services:hover {
+#intro .intro-info .btn-services {
   background: #007bff;
   border-color: #007bff;
   color: #fff;
