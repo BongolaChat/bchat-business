@@ -130,6 +130,7 @@ const shoeBg = document.querySelector('#live-demo .shoeBackground');
 
 let prevColor = "blue";
 let animationEnd = true;
+let indexColor = 0;
 
 function changeSize(){
     sizes.forEach(size => size.classList.remove('active'));
@@ -186,3 +187,8 @@ function changeHeight(){
 changeHeight();
 
 window.addEventListener('resize', changeHeight);
+
+setInterval(function (){
+  changeColor.apply(colors[indexColor%(colors.length-1)]);
+  indexColor++;
+}, 3000);
