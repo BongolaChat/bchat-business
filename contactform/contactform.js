@@ -100,19 +100,41 @@ jQuery(document).ready(function($) {
       data: str,
       success: function(msg) {
         // alert(msg);
-        if (msg == 'OK') {
-          $("#sendmessage").addClass("show");
-          $("#errormessage").removeClass("show");
-          $('.contactForm').find("input, textarea").val("");
-        } else {
-          $("#sendmessage").removeClass("show");
-          $("#errormessage").addClass("show");
-          $('#errormessage').html(msg);
-        }
-
+        $("#sendmessage").addClass("show");
+        $("#errormessage").removeClass("show");
+        $('.contactForm').find("input, textarea").val("");
       }
+    }).fail(() => {
+      $("#sendmessage").removeClass("show");
+      $("#errormessage").addClass("show");
+      $('#errormessage').html("Désolé, Votre message n'a pas été envoyé !");
     });
     return false;
   });
 
+
+  $("#newsletter-form").submit(function() {
+    var action = $(this).attr("action");
+    $("#subscribe_btn")
+        .attr("disabled", "disabled");
+    $.ajax({
+      type: "POST",
+      url: action,
+      data:  $(this).serialize(),
+      success: function(msg){
+        $("#subscribe_btn").removeAttr("disabled");
+        $("#subscribe_btn")
+          .html('<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>');
+        setTimeout(function (){
+          $("#subscribe_btn").html('<i class="fa fa-paper-plane-o" aria-hidden="true"></i>');
+        }, 3000);
+      }
+    }).fail(() => {
+      $("#subscribe_btn").html('<i class="fa fa-thumbs-o-down" aria-hidden="true"></i>');
+      setTimeout(function (){
+        $("#subscribe_btn").html('<i class="fa fa-paper-plane-o" aria-hidden="true"></i>');
+      }, 3000);
+    });
+    return false;
+  });
 });
