@@ -245,7 +245,7 @@ h6 {
 .main-nav {
   /* Drop Down */
   /* Deep Drop Down */
-}
+} 
 
 .main-nav,
 .main-nav * {
@@ -637,6 +637,107 @@ h6 {
   margin-left: 40px;
   line-height: 24px;
   margin-bottom: 0;
+}
+
+#pricing {
+  padding: 60px 0;
+}
+
+/*------------------------------------------------------------------
+    PRICING TABLES
+-------------------------------------------------------------------*/
+
+.pricingTable{
+  padding: 25px 0;    
+  text-align: center;
+}
+.pricingTable.active{
+box-shadow: 0 0 1.75rem rgba(2,3,3,.15);
+}
+.pricingTable .price-value{
+  font-size: 60px;
+  font-weight: 800;
+  color: #0077e6;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+.pricingTable .month{
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  color: #0077e6;
+  letter-spacing: 2px;
+  line-height: 10px;
+  text-transform: uppercase;
+}
+.pricingTable .title{
+  display: inline-block;
+  padding: 15px 40px;
+  margin: 0 0 20px 0;
+  background: #333;
+  font-size: 20px;
+  color: #ffffff;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+.pricingTable:hover .title{
+  background: #0077e6;
+  color: #fff;
+}
+.pricingTable:hover {
+box-shadow: 0 0 1.75rem rgba(2,3,3,.15);
+}
+.pricingTable .title:before,
+.pricingTable .title:after{
+  content: "";
+  border-right: 26px solid #333;
+  border-top: 27px solid transparent;
+  border-bottom: 27px solid transparent;
+  position: absolute;
+  top: 0;
+  left: -26px;
+  transition: all 0.3s ease 0s;
+}
+.pricingTable .title:after{
+  border-right: none;
+  border-left: 26px solid #333;
+  left: auto;
+  right: -26px;
+}
+.pricingTable:hover .title:before{ border-right-color: #0077e6; }
+.pricingTable:hover .title:after{ border-left-color: #0077e6; }
+.pricingTable .pricing-content{
+  padding: 0;
+  margin: 0 0 25px 0;
+  list-style: none;
+}
+.pricingTable .pricing-content li{
+  font-size: 17px;
+  color: #333333;
+  line-height: 40px;
+}
+.pricingTable .pricingTable-signup{
+  display: inline-block;
+  padding: 7px 30px;
+  background: #333333;
+  font-size: 16px;
+font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+
+.pricingTable .unavailable {
+  text-decoration: line-through;
+  color: rgba(128, 128, 128, 0.678) !important;
+}
+
+@media only screen and (max-width: 990px){
+  .pricingTable{ margin-bottom: 30px; }
 }
 
 #why-us {
@@ -1409,5 +1510,477 @@ h6 {
 @media (max-width: 574px) {
   #intro {
     padding: 100px 0 20px 0;
+  }
+}
+
+/*
+  -------------------------------
+  Live Demo
+  -------------------------------
+*/
+:root{
+  --primary: #2175f5;
+}
+
+
+#live-demo .container{
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  overflow: hidden;
+  max-width: none;
+}
+
+#live-demo .card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 860px;
+  flex-direction: row;
+  border: none;
+}
+
+#live-demo .shoeBackground{
+  position: relative;
+  width: 50%;
+  height: 475px;
+  box-shadow: -15px 0 35px rgba(0, 0, 0, 0.1),
+  0 -15px 35px rgba(0, 0, 0, 0.1),
+  0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: .5s;
+}
+
+#live-demo .gradients{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+#live-demo .gradient{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -2;
+}
+
+#live-demo .first{
+  z-index: 0;
+  animation: 1s width ease;
+}
+
+@keyframes width{
+  from{
+      width: 0%;
+  }
+  to{
+      width: 100%;
+  }
+}
+
+#live-demo .second{
+  z-index: -1;
+}
+
+#live-demo .gradient[color="blue"]{
+  background-image: linear-gradient(45deg, #0136af, #22abfa) !important;
+}
+
+#live-demo .gradient[color="red"]{
+  background-image: linear-gradient(45deg, #d62926, #ee625f) !important;
+}
+
+#live-demo .gradient[color="green"]{
+  background-image: linear-gradient(45deg, #11998e, #1ce669) !important;
+}
+
+#live-demo .gradient[color="orange"]{
+  background-image: linear-gradient(45deg, #fc4a1a, #f7b733) !important;
+}
+
+#live-demo .gradient[color="black"]{
+  background-image: linear-gradient(45deg, #111, #666) !important;
+}
+
+#live-demo .logo{
+  position: absolute;
+  width: 100px;
+  left: 20px;
+  top: 20px;
+}
+
+#live-demo .share{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: var(--primary);
+  transition: .5s;
+}
+
+#live-demo .share:hover{
+  transform: scale(1.1);
+}
+
+#live-demo .share i{
+  line-height: 50px;
+}
+
+#live-demo .nike{
+  position: absolute;
+  top: 85px;
+  left: 15px;
+  font-size: 11rem;
+  text-transform: uppercase;
+  line-height: .9;
+  color: rgb(22, 2, 2);
+  opacity: .1;
+}
+
+#live-demo .shoe{
+  position: absolute;
+  width: 140%;
+  opacity: 0;
+  bottom: 0;
+  right: 0;
+  transform: rotate(-20deg);
+  transition: .5s;
+}
+
+#live-demo .shoe.show{
+  opacity: 1 !important;
+}
+
+#live-demo .info{
+  width: 50%;
+  background-color: #fff;
+  z-index: 1;
+  padding: 35px 40px;
+  box-shadow: 15px 0 35px rgba(0, 0, 0, 0.1),
+  0 -15px 35px rgba(0, 0, 0, 0.1),
+  0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+#live-demo .shoeName{
+  padding: 0 0 10px 0;
+}
+
+#live-demo .shoeName div{
+  display: flex;
+  align-items: center;
+}
+
+#live-demo .shoeName div .big{
+  margin-right: 10px;
+  font-size: 2rem;
+  color: #333;
+  line-height: 1;
+}
+
+#live-demo .shoeName div .new{
+  background-color: var(--primary);
+  text-transform: uppercase;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 5px;
+  transition: .5s;
+}
+
+#live-demo .shoeName .small{
+  font-weight: 500;
+  color: #444;
+  margin-top: 3px;
+  text-transform: capitalize;
+}
+
+#live-demo .shoeName, .description, .color-container, .size-container{
+  border-bottom: 1px solid #dadada;
+}
+
+#live-demo .description{
+  padding: 10px 0;
+}
+
+#live-demo .title{
+  color: #3a3a3a;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+#live-demo .text{
+  color: #555;
+  font-size: 17px;
+}
+
+#live-demo .color-container{
+  padding: 10px 0;
+}
+
+#live-demo .colors{
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+#live-demo .color{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin: 0 10px;
+  border: 5px solid;
+  cursor: pointer;
+  transition: .5s;
+}
+
+#live-demo .color[color="blue"]{
+  background-color: #2175f5;
+  border-color: #2175f5;
+}
+
+#live-demo .color[color="red"]{
+  background-color: #f84848;
+  border-color: #f84848;
+}
+
+#live-demo .color[color="green"]{
+  background-color: #29b864;
+  border-color: #29b864;
+}
+
+#live-demo .color[color="orange"]{
+  background-color: #ff5521;
+  border-color: #ff5521;
+}
+
+#live-demo .color[color="black"]{
+  background-color: #444;
+  border-color: #444;
+}
+
+#live-demo .color.active{
+  border-color: #fff;
+  box-shadow: 0 0 10px .5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+#live-demo .size-container{
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+#live-demo .sizes{
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+#live-demo .size{
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background-color: #eee;
+  margin: 0 10px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+
+#live-demo .size.active{
+  background-color: var(--primary);
+  color: #fff;
+  transition: .5s;
+}
+
+#live-demo .buy-price{
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#live-demo .price{
+  color: #333;
+  display: flex;
+  align-items: flex-start;
+}
+
+#live-demo .price h1{
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+#live-demo .price i{
+  font-size: 1.4rem;
+  margin-right: 1px;
+}
+
+#live-demo .buy{
+  padding: .7rem 1rem;
+  background-color: var(--primary);
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: .5s;
+}
+
+#live-demo .buy:hover{
+  transform: scale(1.1);
+}
+
+#live-demo .buy i{
+  margin-right: 2px;
+}
+
+@media (max-width: 1070px){
+  #live-demo .shoe{
+      width: 135%;
+  }
+}
+
+@media (max-width: 1000px){
+  #live-demo .card{
+      flex-direction: column;
+      width: 100%;
+      box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+  #live-demo .card > div{
+      width: 100%;
+      box-shadow: none;
+  }
+
+  #live-demo .shoe{
+      width: 100%;
+      transform: rotate(-5deg) translateY(-50%);
+      top: 55%;
+      right: 2%;
+  }
+
+  #live-demo .nike{
+      top: 20%;
+      left: 5%;
+  }
+}
+
+@media (max-width: 600px){
+  #live-demo .share{
+      width: 40px;
+      height: 40px;
+  }
+
+  #live-demo .share i {
+      font-size: 1rem;
+      line-height: 40px;
+  }
+
+  #live-demo .logo{
+      width: 70px;
+  }
+}
+
+@media (max-width: 490px){
+  #live-demo .nike{
+      font-size: 7rem;
+  }
+
+  #live-demo .shoeName div .big{
+      font-size: 1.3rem;
+  }
+
+  #live-demo .small{
+      font-size: 1rem;
+  }
+
+  #live-demo .new{
+      padding: 2px 6px;
+      font-size: .9rem;
+  }
+
+  #live-demo .title{
+      font-size: .9rem;
+  }
+
+  #live-demo .text{
+      font-size: .8rem;
+  }
+
+  #live-demo .buy{
+      padding: .5rem .8rem;
+      font-size: .8rem;
+  }
+
+  #live-demo .price h1{
+      font-size: 1.5rem;
+  }
+
+  #live-demo .price i{
+      font-size: .9rem;
+  }
+
+  #live-demo .size{
+      width: 30px;
+      height: 30px;
+      margin: 0 8px;
+      font-size: .9rem;
+      line-height: 30px;
+  }
+
+  #live-demo .color{
+      margin: 0 6px;
+      width: 0 20px;
+      width: 20px;
+      height: 20px;
+      border-width: 4px;
+  }
+
+  #live-demo .share{
+      width: 35px;
+      height: 35px;
+      top: 10px;
+      right: 10px;
+  }
+
+  #live-demo .share i{
+      font-size: .8rem;
+      line-height: 35px;
+  }
+
+  #live-demo .logo{
+      width: 60px;
+      top: 10px;
+      left: 10px;
+  }
+
+  #live-demo .info{
+      padding: 20px;
+  }
+}
+
+@media (max-width: 400px){
+  #live-demo .buy i{
+      display: none;
+  }
+
+  #live-demo .container{
+      padding: 20px;
   }
 }
